@@ -8,12 +8,18 @@
 #ifndef INC_IS31FL3197_H_
 #define INC_IS31FL3197_H_
 
-#include "stm32g0xx_hal.h"
-
-
-
 #include <stdint.h>
 #include <stdbool.h>
+
+#if defined(STM32F412Vx) || defined(STM32F446xx)
+    #include "stm32f4xx_hal.h"
+#elif defined(STM32G030xx) || defined(STM32G0B0xx) || defined(STM32G070xx)
+    #include "stm32g0xx_hal.h"
+#elif defined(STM32G431xx)
+    #include "stm32g4xx_hal.h"
+#else
+	#error "MCU not supported. Please contact for platform support."
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -326,3 +332,4 @@ HAL_StatusTypeDef IS31FL3197_PatternLoopTimesRegister(IS31FL3197_HandleTypeDef *
 }
 #endif
 #endif /* INC_IS31FL3197_H_ */
+
