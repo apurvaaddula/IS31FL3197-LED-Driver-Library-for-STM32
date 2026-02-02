@@ -87,9 +87,6 @@ extern "C" {
 #define IS31FL3197_SOFTWARE_SHUTDOWN 0x00
 #define IS31FL3197_NORMAL 0x01
 
-#define PD_MODE_1   0
-#define PD_MODE_2   1
-
 #define UPDATE 0xC5
 
 typedef enum {
@@ -332,4 +329,5 @@ HAL_StatusTypeDef IS31FL3197_PatternLoopTimesRegister(IS31FL3197_HandleTypeDef *
 }
 #endif
 #endif /* INC_IS31FL3197_H_ */
+
 
